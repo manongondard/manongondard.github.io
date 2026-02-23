@@ -4,127 +4,229 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Manon Gondard — Contenu Instagram pour commerces & artisans</title>
-  <meta name="description" content="J’aide les commerces et artisans à avoir une présence Instagram régulière, pro et engageante, sans y passer du temps. Audit, forfaits mensuels, animation." />
+  <meta name="description" content="J’accompagne les commerces et artisans à développer une présence Instagram régulière, pro et engageante, sans y passer du temps. Audit, forfaits mensuels, animation." />
+
   <style>
-:root{
-  --bg:#f6f1e8;
-  --card:#ffffff;
-  --text:#3c342e;
-  --muted:#7a6f66;
-  --line:rgba(60,52,46,.12);
-  --accent:#c17c5d;      /* terracotta doux */
-  --accent2:#8ca38b;     /* vert sauge */
-  --shadow: 0 10px 30px rgba(60,52,46,.08);
-  --radius:18px;
-  --max:1050px;
-}
-    *{box-sizing:border-box}
+    :root{
+      --bg:#f6f1e8;            /* beige papier */
+      --card:rgba(255,255,255,.86);
+      --text:#3c342e;          /* brun doux */
+      --muted:#7a6f66;
+      --line:rgba(60,52,46,.14);
+      --accent:#c17c5d;        /* terracotta doux */
+      --shadow: 0 12px 34px rgba(60,52,46,.08);
+      --radius:20px;
+      --max: 1050px;
+    }
+
+    *{ box-sizing:border-box; }
+    html{ scroll-behavior:smooth; }
+
     body{
-  margin:0;
-  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-  background: var(--bg);
-  color:var(--text);
-  line-height:1.5;
-}
-    a{color:inherit}
-    .wrap{max-width:var(--max); margin:0 auto; padding:28px 18px 72px;}
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      background:
+        radial-gradient(900px 600px at 12% 0%, rgba(193,124,93,.18), transparent 60%),
+        radial-gradient(900px 600px at 92% 18%, rgba(140,163,139,.16), transparent 60%),
+        var(--bg);
+      color:var(--text);
+      line-height:1.55;
+    }
+
+    a{ color:inherit; }
+    .wrap{ max-width:var(--max); margin:0 auto; padding:28px 18px 72px; }
+
     header{
       display:flex; align-items:center; justify-content:space-between;
-      gap:12px; padding:10px 0 20px;
+      gap:12px; padding:10px 0 18px;
+      position:sticky; top:0;
+      background: linear-gradient(to bottom, rgba(246,241,232,.92), rgba(246,241,232,.55));
+      backdrop-filter: blur(10px);
+      z-index: 10;
+      border-bottom: 1px solid rgba(60,52,46,.06);
     }
+
     .brand{
       display:flex; align-items:center; gap:10px; text-decoration:none;
-      font-weight:700;
+      font-weight:800;
+      letter-spacing:.2px;
     }
+
     .dot{
       width:14px; height:14px; border-radius:50%;
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-      box-shadow: 0 0 0 4px rgba(125,211,252,.12);
+      background: var(--accent);
+      box-shadow: 0 0 0 5px rgba(193,124,93,.14);
     }
-    nav{display:flex; gap:14px; flex-wrap:wrap}
-    nav a{opacity:.9; text-decoration:none; padding:8px 10px; border-radius:12px}
-    nav a:hover{background:rgba(255,255,255,.06)}
-    .hero{
-      display:grid; grid-template-columns: 1.2fr .8fr;
-      gap:18px; align-items:stretch;
-      margin-top:6px;
+
+    nav{ display:flex; gap:10px; flex-wrap:wrap; }
+    nav a{
+      opacity:.9; text-decoration:none; padding:8px 10px;
+      border-radius:12px;
     }
+    nav a:hover{ background: rgba(60,52,46,.05); }
+
     @media (max-width: 860px){
-      .hero{grid-template-columns:1fr}
-      nav{display:none}
+      nav{ display:none; }
     }
+
     .card{
-      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
-      border: 1px solid var(--line);
+      background: var(--card);
+      border:1px solid var(--line);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
       padding:22px;
+      backdrop-filter: blur(6px);
     }
-    h1{font-size:42px; line-height:1.1; margin:0 0 12px}
-    @media (max-width: 520px){h1{font-size:34px}}
-    .muted{color:var(--muted)}
-    .pillrow{display:flex; gap:10px; flex-wrap:wrap; margin:14px 0 4px}
-    .pill{
-      font-size:13px; padding:8px 10px; border-radius:999px;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.03);
+
+    .hero{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:18px;
+      align-items:stretch;
+      margin-top:6px;
     }
-    .ctaRow{display:flex; gap:12px; flex-wrap:wrap; margin-top:16px}
+    @media (max-width: 860px){
+      .hero{ grid-template-columns:1fr; }
+    }
+
+    h1{
+      font-size:42px;
+      line-height:1.08;
+      margin:0 0 12px;
+      letter-spacing:-.3px;
+    }
+    @media (max-width: 520px){
+      h1{ font-size:34px; }
+    }
+
+    h2{
+      font-size:26px;
+      margin:34px 0 12px;
+      letter-spacing:-.2px;
+    }
+
+    .muted{ color:var(--muted); }
+
+    .visual{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin:16px 0 4px;
+    }
+    .chip{
+      background: rgba(255,255,255,.72);
+      border:1px solid rgba(60,52,46,.12);
+      padding:10px 12px;
+      border-radius:999px;
+      font-size:13px;
+      box-shadow: 0 8px 18px rgba(60,52,46,.06);
+      white-space:nowrap;
+    }
+
+    .ctaRow{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:16px;
+    }
+
     .btn{
-      display:inline-flex; align-items:center; justify-content:center;
-      padding:11px 14px; border-radius:14px; text-decoration:none;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.04);
-      font-weight:600;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:11px 14px;
+      border-radius:14px;
+      text-decoration:none;
+      border:1px solid rgba(60,52,46,.14);
+      background: rgba(255,255,255,.55);
+      font-weight:700;
+      transition: transform .12s ease, filter .12s ease, background .12s ease;
     }
+    .btn:hover{
+      transform: translateY(-1px);
+      background: rgba(60,52,46,.04);
+    }
+
     .btn.primary{
-      border:none;
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-      color:#071019;
+      border:1px solid rgba(193,124,93,.30);
+      background: var(--accent);
+      color: #fff;
     }
-    .btn:hover{transform: translateY(-1px)}
-    .side h3{margin:0 0 10px; font-size:16px}
-    .kpis{display:grid; gap:10px}
+    .btn.primary:hover{ filter: brightness(.96); background: var(--accent); }
+
+    .side h3{ margin:0 0 10px; font-size:16px; }
+    .kpis{ display:grid; gap:10px; }
     .kpi{
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.03);
+      border:1px solid rgba(60,52,46,.12);
+      background: rgba(255,255,255,.62);
       border-radius:16px;
       padding:14px;
     }
-    .kpi strong{display:block; font-size:15px}
-    .grid3{
-      display:grid; grid-template-columns: repeat(3, 1fr);
-      gap:14px; margin-top:18px;
+    .kpi strong{ display:block; font-size:15px; margin-bottom:2px; }
+
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:9px 11px;
+      border-radius:999px;
+      border:1px solid rgba(60,52,46,.12);
+      background: rgba(255,255,255,.65);
+      margin-top:14px;
+      font-weight:600;
     }
-    @media (max-width: 860px){.grid3{grid-template-columns:1fr}}
-    h2{font-size:26px; margin:34px 0 12px}
-    .offer h3{margin:0 0 6px}
+
+    .grid3{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:14px;
+      margin-top:18px;
+    }
+    @media (max-width: 860px){
+      .grid3{ grid-template-columns:1fr; }
+    }
+
+    .two{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:14px;
+      margin-top:14px;
+    }
+    @media (max-width: 860px){
+      .two{ grid-template-columns:1fr; }
+    }
+
+    .offer h3{ margin:0 0 6px; }
     .price{
       display:inline-block;
-      font-weight:800;
-      background:rgba(125,211,252,.12);
-      border:1px solid rgba(125,211,252,.25);
-      padding:6px 10px; border-radius:999px;
+      font-weight:900;
+      background: rgba(193,124,93,.12);
+      border:1px solid rgba(193,124,93,.22);
+      padding:7px 11px;
+      border-radius:999px;
       margin:10px 0 10px;
     }
-    ul{margin:10px 0 0; padding-left:18px; color:var(--muted)}
-    li{margin:6px 0}
-    .sectionLine{height:1px; background:var(--line); margin:28px 0}
-    .two{
-      display:grid; grid-template-columns: 1fr 1fr;
-      gap:14px;
-    }
-    @media (max-width: 860px){.two{grid-template-columns:1fr}}
-    .mini{font-size:13px; color:var(--muted)}
-    footer{margin-top:34px; color:var(--muted); font-size:13px}
-    .badge{
-      display:inline-flex; align-items:center; gap:8px;
-      padding:9px 11px; border-radius:999px;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.03);
+
+    ul{ margin:10px 0 0; padding-left:18px; color:var(--muted); }
+    li{ margin:6px 0; }
+
+    .mini{ font-size:13px; color:var(--muted); }
+
+    .sectionLine{ height:1px; background: rgba(60,52,46,.10); margin:28px 0; }
+
+    footer{ margin-top:34px; color:var(--muted); font-size:13px; }
+
+    /* petites mises en évidence */
+    .highlight{
+      background: rgba(255,255,255,.55);
+      border:1px dashed rgba(60,52,46,.18);
+      padding:12px 14px;
+      border-radius:16px;
+      margin-top:14px;
     }
   </style>
 </head>
+
 <body>
   <div class="wrap">
     <header>
@@ -132,77 +234,82 @@
         <span class="dot"></span>
         <span>Manon Gondard</span>
       </a>
+
       <nav>
         <a href="#offres">Offres</a>
         <a href="#apropos">À propos</a>
         <a href="#process">Process</a>
         <a href="#contact">Contact</a>
       </nav>
-      <a class="btn" href="#contact">Demander un devis</a>
+
+      <a class="btn" href="#contact">Parler ensemble</a>
     </header>
 
     <main id="top" class="hero">
       <section class="card">
-        <h1>Du contenu Instagram régulier et pro, <br/>sans y passer tes soirées.</h1>
+        <h1>Une présence Instagram régulière et pro,<br/>sans y passer ton temps.</h1>
+
         <p class="muted">
-          J’accompagne les <strong>commerces de proximité</strong> et <strong>artisans/créateurs</strong> (Lyon & à distance)
-          à publier de façon régulière, cohérente et engageante — pour attirer des clients locaux et inspirer confiance.
+          J’accompagne les <strong>commerces de proximité</strong> et <strong>artisans/créateurs</strong>
+          à publier de façon régulière, cohérente et engageante — pour attirer des clients et inspirer confiance.
         </p>
 
-        <div class="pillrow">
-          <span class="pill">Calendrier éditorial</span>
-          <span class="pill">Rédaction & programmation</span>
-          <span class="pill">Visuels cohérents</span>
-          <span class="pill">Stratégie locale</span>
+        <div class="visual">
+          <div class="chip">🌿 Artisans & créateurs</div>
+          <div class="chip">📍 Visibilité locale</div>
+          <div class="chip">✨ Image cohérente</div>
+          <div class="chip">🗓️ Calendrier clair</div>
         </div>
 
         <div class="ctaRow">
-          <a class="btn primary" href="#offres">Voir les offres</a>
-          <a class="btn" href="#contact">Échanger 15 min</a>
+          <a class="btn primary" href="#offres">Découvrir les offres</a>
+          <a class="btn" href="#contact">Parler de votre projet</a>
         </div>
 
-        <p class="mini" style="margin-top:14px;">
-          * Offre lancement : places limitées sur les forfaits mensuels (pour démarrage).
-        </p>
+        <div class="highlight">
+          <strong>Offre lancement :</strong> quelques places disponibles sur le forfait mensuel “Essentiel”.
+          <div class="mini" style="margin-top:6px;">(Pour démarrer avec un cadre simple et efficace.)</div>
+        </div>
       </section>
 
       <aside class="card side">
-        <h3>Ce que tu obtiens</h3>
+        <h3>Ce que vous obtenez</h3>
         <div class="kpis">
           <div class="kpi">
-            <strong>+ de régularité</strong>
-            <span class="muted">Tu publies sans te demander “quoi poster ?”.</span>
+            <strong>Régularité</strong>
+            <span class="muted">On évite le “je poste quand j’ai le temps”.</span>
           </div>
           <div class="kpi">
-            <strong>Une image pro</strong>
+            <strong>Image pro</strong>
             <span class="muted">Un feed cohérent qui rassure avant la visite.</span>
           </div>
           <div class="kpi">
-            <strong>Du temps gagné</strong>
-            <span class="muted">Tu fournis la matière (photos/vidéos), je structure et publie.</span>
+            <strong>Temps gagné</strong>
+            <span class="muted">Vous fournissez la matière (photos/vidéos), je structure et publie.</span>
           </div>
         </div>
-        <div style="margin-top:14px" class="badge">
+
+        <div class="badge">
           <span aria-hidden="true">📍</span>
-          <span>Spécial Lyon / local</span>
+          <span>Lyon & à distance</span>
         </div>
       </aside>
     </main>
 
     <h2 id="offres">Offres</h2>
-    <p class="muted">Des formats simples, cadrés, adaptés aux commerces & artisans. (Sans déplacement.)</p>
+    <p class="muted">Des formats simples, cadrés, adaptés aux commerces & artisans (sans déplacement).</p>
 
     <section class="grid3">
       <article class="card offer">
         <h3>Audit & Plan d’action</h3>
         <div class="price">190€ — one shot</div>
-        <p class="muted">Parfait si tu veux une direction claire en 30 jours.</p>
+        <p class="muted">Parfait si vous voulez une direction claire pour les prochaines semaines.</p>
         <ul>
           <li>Audit profil + bio + highlights</li>
           <li>Analyse du feed (cohérence, clarté)</li>
           <li>12 idées de posts personnalisées</li>
           <li>Plan éditorial 30 jours</li>
-          <li>PDF + call 30 min</li>
+          <li>PDF + call explicatif (30 min)</li>
         </ul>
       </article>
 
@@ -216,7 +323,7 @@
           <li>Hashtags géolocalisés</li>
           <li>Calendrier éditorial</li>
           <li>Programmation</li>
-          <li>Point mensuel 30 min</li>
+          <li>Point mensuel (30 min)</li>
         </ul>
         <p class="mini">Le client fournit photos/vidéos (même simples).</p>
       </article>
@@ -231,16 +338,16 @@
           <li>Stratégie mensuelle (temps forts)</li>
           <li>Optimisation bio si besoin</li>
           <li>Analyse & recommandations</li>
-          <li>Point mensuel 45 min</li>
+          <li>Point mensuel (45 min)</li>
         </ul>
       </article>
     </section>
 
-    <section class="two" style="margin-top:14px;">
+    <section class="two">
       <article class="card offer">
         <h3>Engagement & Fidélisation</h3>
         <div class="price">450€/mois</div>
-        <p class="muted">Idéal si tu veux une communauté active (DM / commentaires) sans y passer ton temps.</p>
+        <p class="muted">Idéal si vous voulez une communauté active (DM / commentaires) sans y passer vos journées.</p>
         <ul>
           <li>Réponses DM & commentaires (volume cadré)</li>
           <li>Animation & relances (stories / questions)</li>
@@ -254,13 +361,13 @@
       <article class="card offer">
         <h3>Pack Planning 3 mois</h3>
         <div class="price">350€ — one shot</div>
-        <p class="muted">Pour les pros autonomes : tu fais toi-même, mais avec une vraie structure.</p>
+        <p class="muted">Pour les pros autonomes : vous publiez vous-même, mais avec une vraie structure.</p>
         <ul>
           <li>Ligne éditoriale</li>
           <li>30 idées de contenus</li>
           <li>Calendrier détaillé 3 mois</li>
-          <li>Guidelines (formats, hooks, CTA)</li>
-          <li>Call 45 min</li>
+          <li>Guidelines (formats, accroches, CTA)</li>
+          <li>Call (45 min)</li>
         </ul>
       </article>
     </section>
@@ -272,43 +379,46 @@
       <p class="muted" style="margin:0">
         Je suis Manon, freelance en communication digitale et création de contenu.
         J’ai une expérience terrain en <strong>contenu</strong>, <strong>animation de communauté</strong> et <strong>support</strong>.
-        Mon approche : du contenu simple, régulier, utile — et une image qui inspire confiance aux clients locaux.
+        Mon approche : du contenu simple, régulier, utile — et une image qui inspire confiance.
       </p>
     </section>
 
     <h2 id="process">Comment on travaille ensemble</h2>
     <section class="grid3">
       <div class="card">
-        <h3>1) Brief rapide</h3>
-        <p class="muted">On clarifie tes offres, ta cible et tes priorités du mois.</p>
+        <h3>1) Brief</h3>
+        <p class="muted">On clarifie vos offres, votre cible et vos priorités du mois.</p>
       </div>
       <div class="card">
-        <h3>2) Calendrier</h3>
-        <p class="muted">Je propose un planning + idées de posts validées rapidement.</p>
+        <h3>2) Planning</h3>
+        <p class="muted">Je propose un calendrier + des idées, validées rapidement.</p>
       </div>
       <div class="card">
         <h3>3) Création & publication</h3>
-        <p class="muted">Je rédige, je mets en forme, je programme. Tu restes focus sur ton métier.</p>
+        <p class="muted">Je rédige, je mets en forme, je programme. Vous restez focus sur votre métier.</p>
       </div>
     </section>
 
     <h2 id="contact">Contact</h2>
     <section class="card">
       <p class="muted">
-        Dis-moi ton activité + ton Instagram (ou site) + ton objectif (visibilité / régularité / engagement),
-        et je te propose l’offre la plus adaptée.
+        Vous me partagez votre activité + votre compte Instagram (ou vos supports), et je vous réponds avec une proposition simple.
       </p>
+
       <div class="ctaRow">
-        <a class="btn primary" href="mailto:tonemail@exemple.com?subject=Demande%20d%27infos%20-%20Instagram&body=Bonjour%20Manon%2C%0A%0AActivit%C3%A9%20%3A%20%0ACompte%20Instagram%20%3A%20%0AObjectif%20%3A%20(visibilit%C3%A9%2Fr%C3%A9gularit%C3%A9%2Fengagement)%0A%0AMerci%20%21">
-          M’écrire par email
+        <a class="btn primary" href="mailto:tonemail@exemple.com?subject=Demande%20-%20Communication%20Instagram&body=Bonjour%20Manon%2C%0A%0AActivit%C3%A9%20%3A%20%0ACompte%20Instagram%20%3A%20%0AObjectif%20%3A%20(visibilit%C3%A9%2Fr%C3%A9gularit%C3%A9%2Fengagement)%0AVille%20%3A%20%0A%0AMerci%20%21">
+          Parler avec vous
         </a>
         <a class="btn" href="#offres">Revoir les offres</a>
       </div>
-      <p class="mini" style="margin-top:10px;">(Remplace <strong>tonemail@exemple.com</strong> par ton adresse.)</p>
+
+      <p class="mini" style="margin-top:10px;">
+        Pense à remplacer <strong>tonemail@exemple.com</strong> par ton adresse email.
+      </p>
     </section>
 
     <footer>
-      © <span id="y"></span> Manon Gondard — Lyon. • Mentions légales sur demande.
+      © <span id="y"></span> Manon Gondard — Lyon.
     </footer>
   </div>
 
