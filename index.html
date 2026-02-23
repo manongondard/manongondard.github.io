@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Manon Gondard — Contenu Instagram pour commerces & artisans</title>
-  <meta name="description" content="J’accompagne les commerces et artisans à développer une présence Instagram régulière, pro et engageante, sans y passer du temps. Audit, forfaits mensuels, animation." />
+  <meta name="description" content="J’accompagne les commerces et artisans à développer une présence Instagram régulière, pro et engageante, sans y passer du temps. Forfaits, projets ponctuels, animation." />
 
   <style>
     :root{
@@ -216,13 +216,94 @@
 
     footer{ margin-top:34px; color:var(--muted); font-size:13px; }
 
-    /* petites mises en évidence */
     .highlight{
       background: rgba(255,255,255,.55);
       border:1px dashed rgba(60,52,46,.18);
       padding:12px 14px;
       border-radius:16px;
       margin-top:14px;
+    }
+
+    /* À propos */
+    .about{
+      display:grid;
+      grid-template-columns: 120px 1fr;
+      gap:16px;
+      align-items:start;
+    }
+    @media (max-width: 520px){
+      .about{ grid-template-columns: 1fr; }
+    }
+    .avatar{
+      width:120px;
+      height:120px;
+      border-radius: 22px;
+      object-fit: cover;
+      border:1px solid rgba(60,52,46,.14);
+      box-shadow: 0 10px 26px rgba(60,52,46,.10);
+      background: rgba(255,255,255,.6);
+    }
+    .signature{
+      margin-top:10px;
+      font-size:28px;
+      line-height:1;
+      color: rgba(60,52,46,.78);
+      font-family: "Brush Script MT", "Apple Chancery", "Snell Roundhand", cursive;
+    }
+
+    /* Ils m'ont fait confiance */
+    .trustGrid{
+      display:grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap:12px;
+      margin-top:14px;
+    }
+    @media (max-width: 860px){
+      .trustGrid{ grid-template-columns: repeat(2, 1fr); }
+    }
+    .trustItem{
+      border:1px solid rgba(60,52,46,.12);
+      background: rgba(255,255,255,.62);
+      border-radius:16px;
+      padding:14px;
+      text-align:center;
+      font-weight:700;
+      color: rgba(60,52,46,.85);
+    }
+    .trustItem span{
+      display:block;
+      font-weight:600;
+      color: var(--muted);
+      margin-top:6px;
+      font-size:13px;
+    }
+
+    .portfolioGrid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:14px;
+      margin-top:14px;
+    }
+    @media (max-width: 860px){
+      .portfolioGrid{ grid-template-columns: 1fr; }
+    }
+    .case{
+      border:1px solid rgba(60,52,46,.12);
+      background: rgba(255,255,255,.62);
+      border-radius:16px;
+      padding:16px;
+    }
+    .case strong{ display:block; margin-bottom:6px; }
+    .tags{
+      display:flex; flex-wrap:wrap; gap:8px; margin-top:10px;
+    }
+    .tag{
+      font-size:12px;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid rgba(60,52,46,.12);
+      background: rgba(255,255,255,.55);
+      color: rgba(60,52,46,.80);
     }
   </style>
 </head>
@@ -237,8 +318,9 @@
 
       <nav>
         <a href="#offres">Offres</a>
+        <a href="#ponctuel">Projets ponctuels</a>
+        <a href="#realisations">Réalisations</a>
         <a href="#apropos">À propos</a>
-        <a href="#process">Process</a>
         <a href="#contact">Contact</a>
       </nav>
 
@@ -296,7 +378,8 @@
       </aside>
     </main>
 
-    <h2 id="offres">Offres</h2>
+    <!-- OFFRES (FORFAITS) -->
+    <h2 id="offres">Offres (forfaits)</h2>
     <p class="muted">Des formats simples, cadrés, adaptés aux commerces & artisans (sans déplacement).</p>
 
     <section class="grid3">
@@ -315,7 +398,7 @@
 
       <article class="card offer">
         <h3>Forfait Essentiel</h3>
-        <div class="price">300€/mois — lancement</div>
+        <div class="price">à partir de 300€ / mois — sur devis</div>
         <p class="muted">La base : régularité + posts propres + légendes efficaces.</p>
         <ul>
           <li>4 posts / mois</li>
@@ -330,7 +413,7 @@
 
       <article class="card offer">
         <h3>Forfait Visibilité</h3>
-        <div class="price">480€/mois</div>
+        <div class="price">à partir de 480€ / mois — sur devis</div>
         <p class="muted">Pour accélérer : plus de contenu + stories + suivi.</p>
         <ul>
           <li>8 posts / mois</li>
@@ -346,7 +429,7 @@
     <section class="two">
       <article class="card offer">
         <h3>Engagement & Fidélisation</h3>
-        <div class="price">450€/mois</div>
+        <div class="price">à partir de 450€ / mois — sur devis</div>
         <p class="muted">Idéal si vous voulez une communauté active (DM / commentaires) sans y passer vos journées.</p>
         <ul>
           <li>Réponses DM & commentaires (volume cadré)</li>
@@ -360,7 +443,7 @@
 
       <article class="card offer">
         <h3>Pack Planning 3 mois</h3>
-        <div class="price">350€ — one shot</div>
+        <div class="price">à partir de 350€ — sur devis</div>
         <p class="muted">Pour les pros autonomes : vous publiez vous-même, mais avec une vraie structure.</p>
         <ul>
           <li>Ligne éditoriale</li>
@@ -374,15 +457,106 @@
 
     <div class="sectionLine"></div>
 
+    <!-- PROJETS PONCTUELS -->
+    <h2 id="ponctuel">Projets ponctuels (sur devis)</h2>
+    <p class="muted">
+      Vous avez un besoin précis (événement, promo, support) ? Je peux aussi intervenir ponctuellement.
+      <br/>Ensuite, si vous souhaitez garder le rythme, on passe sur un forfait mensuel.
+    </p>
+
+    <section class="two">
+      <article class="card">
+        <h3>Création de supports</h3>
+        <p class="muted">Idéal pour une date clé, un lancement, une offre saisonnière.</p>
+        <ul>
+          <li>Visuel “post” (1 format) : <strong>à partir de 60€</strong></li>
+          <li>Post + déclinaison story : <strong>à partir de 90€</strong></li>
+          <li>Mini pack événement (2 posts + 4 stories) : <strong>à partir de 220€</strong></li>
+          <li>Templates Canva (5 modèles réutilisables) : <strong>à partir de 180€</strong></li>
+        </ul>
+        <p class="mini" style="margin-top:10px;">
+          Inclus : 1 aller-retour de modifications • Délais : 3 à 7 jours ouvrés selon projet.
+        </p>
+      </article>
+
+      <article class="card">
+        <h3>Flyers / affiches</h3>
+        <p class="muted">Pour vos supports en boutique ou vos événements.</p>
+        <ul>
+          <li>Flyer / affiche A4 : <strong>à partir de 140€</strong></li>
+          <li>Affiche + déclinaisons (A5 / story) : <strong>à partir de 190€</strong></li>
+          <li>Visuels pour vitrine (x3) : <strong>à partir de 210€</strong></li>
+        </ul>
+        <p class="mini" style="margin-top:10px;">
+          Option : fournir les fichiers sources Canva • Impression non incluse.
+        </p>
+      </article>
+    </section>
+
+    <div class="sectionLine"></div>
+
+    <!-- RÉALISATIONS / CONFIANCE -->
+    <h2 id="realisations">Réalisations / Ils m’ont fait confiance</h2>
+    <p class="muted">
+      Quelques exemples (à compléter au fur et à mesure). Vous pouvez remplacer les “cartes” par des logos, des avis, ou des cas concrets.
+    </p>
+
+    <section class="trustGrid">
+      <div class="trustItem">Nom client 1<span>Artisan / créateur</span></div>
+      <div class="trustItem">Nom client 2<span>Commerce local</span></div>
+      <div class="trustItem">Nom client 3<span>Service / boutique</span></div>
+      <div class="trustItem">Nom client 4<span>Événement / saison</span></div>
+    </section>
+
+    <section class="portfolioGrid">
+      <div class="case">
+        <strong>Exemple 1 — Refonte de feed</strong>
+        <div class="muted">Cohérence visuelle + légendes + calendrier.</div>
+        <div class="tags">
+          <span class="tag">Instagram</span><span class="tag">Calendrier</span><span class="tag">Rédaction</span>
+        </div>
+      </div>
+
+      <div class="case">
+        <strong>Exemple 2 — Promo événement</strong>
+        <div class="muted">Pack : 2 posts + stories + visuels boutique.</div>
+        <div class="tags">
+          <span class="tag">Événement</span><span class="tag">Stories</span><span class="tag">Visuels</span>
+        </div>
+      </div>
+
+      <div class="case">
+        <strong>Exemple 3 — Templates Canva</strong>
+        <div class="muted">5 modèles réutilisables pour gagner du temps.</div>
+        <div class="tags">
+          <span class="tag">Canva</span><span class="tag">Templates</span><span class="tag">Branding</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="sectionLine"></div>
+
+    <!-- À PROPOS -->
     <h2 id="apropos">À propos</h2>
     <section class="card">
-      <p class="muted" style="margin:0">
-        Je suis Manon, freelance en communication digitale et création de contenu.
-        J’ai une expérience terrain en <strong>contenu</strong>, <strong>animation de communauté</strong> et <strong>support</strong>.
-        Mon approche : du contenu simple, régulier, utile — et une image qui inspire confiance.
+      <div class="about">
+        <img class="avatar" src="manon1.jpeg" alt="Photo de Manon Gondard" />
+        <div>
+          <p class="muted" style="margin:0">
+            Je suis Manon, freelance en communication digitale et création de contenu.
+            J’ai une expérience terrain en <strong>contenu</strong>, <strong>animation de communauté</strong> et <strong>support</strong>.
+            Mon approche : du contenu simple, régulier, utile — et une image qui inspire confiance.
+          </p>
+          <div class="signature">Manon</div>
+          <div class="mini">Lyon • à distance</div>
+        </div>
+      </div>
+      <p class="mini" style="margin-top:12px;">
+        (Astuce : ajoute ta photo dans le repo sous le nom <strong>manon1.jpeg</strong>.)
       </p>
     </section>
 
+    <!-- PROCESS -->
     <h2 id="process">Comment on travaille ensemble</h2>
     <section class="grid3">
       <div class="card">
@@ -399,6 +573,7 @@
       </div>
     </section>
 
+    <!-- CONTACT -->
     <h2 id="contact">Contact</h2>
     <section class="card">
       <p class="muted">
@@ -406,10 +581,10 @@
       </p>
 
       <div class="ctaRow">
-        <a class="btn primary" href="mailto:tonemail@exemple.com?subject=Demande%20-%20Communication%20Instagram&body=Bonjour%20Manon%2C%0A%0AActivit%C3%A9%20%3A%20%0ACompte%20Instagram%20%3A%20%0AObjectif%20%3A%20(visibilit%C3%A9%2Fr%C3%A9gularit%C3%A9%2Fengagement)%0AVille%20%3A%20%0A%0AMerci%20%21">
+        <a class="btn primary" href="mailto:tonemail@exemple.com?subject=Demande%20-%20Communication%20Instagram&body=Bonjour%20Manon%2C%0A%0AActivit%C3%A9%20%3A%20%0ACompte%20Instagram%20%3A%20%0AObjectif%20%3A%20(forfait%20mensuel%20/%20projet%20ponctuel)%0AVille%20%3A%20%0A%0AD%C3%A9lai%20souhait%C3%A9%20%3A%20%0A%0AMerci%20%21">
           Parler avec vous
         </a>
-        <a class="btn" href="#offres">Revoir les offres</a>
+        <a class="btn" href="#ponctuel">Voir les projets ponctuels</a>
       </div>
 
       <p class="mini" style="margin-top:10px;">
