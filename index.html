@@ -10,8 +10,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#faf8f4; --card:#ffffff; --ink:#23302b; --muted:#5e6b65;
-    --accent:#4f7a68; --accent-soft:#e6efe9; --line:#e5e1d8; --warm:#c98a5a;
+    --bg:#f7f3ec; --card:#ffffff; --ink:#1f2a37; --muted:#5b6573;
+    --accent:#2f5d8a; --accent-soft:#e3ebf4; --line:#e6dfd2; --warm:#9c7b55;
     --radius:16px;
   }
   *{box-sizing:border-box;margin:0;padding:0}
@@ -26,7 +26,7 @@
   section+section{border-top:1px solid var(--line)}
 
   /* Navigation */
-  header{position:sticky;top:0;z-index:10;background:rgba(250,248,244,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  header{position:sticky;top:0;z-index:10;background:rgba(247,243,236,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
   nav{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
   .logo{font-family:Fraunces,serif;font-weight:600;font-size:1.15rem;text-decoration:none}
   .links{display:flex;gap:22px;list-style:none;font-size:.95rem}
@@ -37,7 +37,7 @@
   /* Boutons */
   .btn{display:inline-block;padding:12px 22px;border-radius:999px;text-decoration:none;font-weight:500;font-size:.95rem;transition:.2s}
   .btn-main{background:var(--accent);color:#fff}
-  .btn-main:hover{background:#3f6656}
+  .btn-main:hover{background:#244a6f}
   .btn-ghost{border:1.5px solid var(--accent);color:var(--accent)}
   .btn-ghost:hover{background:var(--accent-soft)}
 
@@ -48,9 +48,9 @@
   .hero p.pitch{font-size:1.08rem;color:var(--muted);margin-bottom:22px;max-width:540px}
   .tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
   .tag{background:var(--accent-soft);color:var(--accent);padding:6px 12px;border-radius:999px;font-size:.88rem;font-weight:500}
-  .tag.dispo{background:#f6e9de;color:#9a5f33}
+  .tag.dispo{background:#efe5d6;color:#7a5c38}
   .actions{display:flex;gap:12px;flex-wrap:wrap}
-  .photo{width:100%;max-width:340px;aspect-ratio:1;object-fit:cover;border-radius:50%;justify-self:center;border:6px solid #fff;box-shadow:0 10px 30px rgba(35,48,43,.12)}
+  .photo{width:100%;max-width:340px;aspect-ratio:1;object-fit:cover;border-radius:50%;justify-self:center;border:6px solid #fff;box-shadow:0 10px 30px rgba(31,42,55,.12)}
   @media(max-width:760px){.hero{grid-template-columns:1fr;gap:32px;padding-top:40px}.photo{max-width:220px;order:-1}}
 
   /* Chiffres */
