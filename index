@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Manon Gondard — Relation client, support & communication digitale</title>
+<meta name="description" content="Manon Gondard, basée à Lyon : relation client, support utilisateurs, gestion administrative et communication digitale. Disponible à partir de janvier 2027.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#faf8f4; --card:#ffffff; --ink:#23302b; --muted:#5e6b65;
+    --accent:#4f7a68; --accent-soft:#e6efe9; --line:#e5e1d8; --warm:#c98a5a;
+    --radius:16px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;font-size:16px}
+  a{color:inherit}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+  h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:600;line-height:1.2}
+  h2{font-size:clamp(1.6rem,3vw,2.1rem);margin-bottom:8px}
+  .intro{color:var(--muted);margin-bottom:32px;max-width:640px}
+  section{padding:72px 0;scroll-margin-top:64px}
+  section+section{border-top:1px solid var(--line)}
+
+  /* Navigation */
+  header{position:sticky;top:0;z-index:10;background:rgba(250,248,244,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  nav{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+  .logo{font-family:Fraunces,serif;font-weight:600;font-size:1.15rem;text-decoration:none}
+  .links{display:flex;gap:22px;list-style:none;font-size:.95rem}
+  .links a{text-decoration:none;color:var(--muted)}
+  .links a:hover{color:var(--accent)}
+  @media(max-width:760px){.links{display:none}}
+
+  /* Boutons */
+  .btn{display:inline-block;padding:12px 22px;border-radius:999px;text-decoration:none;font-weight:500;font-size:.95rem;transition:.2s}
+  .btn-main{background:var(--accent);color:#fff}
+  .btn-main:hover{background:#3f6656}
+  .btn-ghost{border:1.5px solid var(--accent);color:var(--accent)}
+  .btn-ghost:hover{background:var(--accent-soft)}
+
+  /* Accueil */
+  .hero{display:grid;grid-template-columns:1.4fr 1fr;gap:48px;align-items:center;padding:72px 0 64px}
+  .hero h1{font-size:clamp(2.2rem,5vw,3.2rem);margin-bottom:10px}
+  .role{font-size:1.15rem;color:var(--accent);font-weight:500;margin-bottom:18px}
+  .hero p.pitch{font-size:1.08rem;color:var(--muted);margin-bottom:22px;max-width:540px}
+  .tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
+  .tag{background:var(--accent-soft);color:var(--accent);padding:6px 12px;border-radius:999px;font-size:.88rem;font-weight:500}
+  .tag.dispo{background:#f6e9de;color:#9a5f33}
+  .actions{display:flex;gap:12px;flex-wrap:wrap}
+  .photo{width:100%;max-width:340px;aspect-ratio:1;object-fit:cover;border-radius:50%;justify-self:center;border:6px solid #fff;box-shadow:0 10px 30px rgba(35,48,43,.12)}
+  @media(max-width:760px){.hero{grid-template-columns:1fr;gap:32px;padding-top:40px}.photo{max-width:220px;order:-1}}
+
+  /* Chiffres */
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+  .stat{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px}
+  .stat b{display:block;font-family:Fraunces,serif;font-size:1.9rem;color:var(--accent);line-height:1.1;margin-bottom:6px}
+  .stat span{font-size:.92rem;color:var(--muted)}
+  @media(max-width:860px){.stats{grid-template-columns:repeat(2,1fr)}}
+
+  /* Cartes */
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+  @media(max-width:860px){.grid3,.grid2{grid-template-columns:1fr}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px}
+  .card h3{font-size:1.2rem;margin-bottom:12px}
+  .card .icon{font-size:1.6rem;margin-bottom:10px}
+  .card ul{list-style:none}
+  .card li{padding:5px 0 5px 22px;position:relative;color:var(--muted);font-size:.96rem}
+  .card li::before{content:"";position:absolute;left:4px;top:14px;width:7px;height:7px;border-radius:50%;background:var(--accent)}
+
+  /* Parcours */
+  .timeline{position:relative;padding-left:28px}
+  .timeline::before{content:"";position:absolute;left:6px;top:8px;bottom:8px;width:2px;background:var(--line)}
+  .job{position:relative;margin-bottom:34px}
+  .job::before{content:"";position:absolute;left:-28px;top:7px;width:14px;height:14px;border-radius:50%;background:var(--bg);border:3px solid var(--accent)}
+  .job .when{font-size:.85rem;color:var(--warm);font-weight:600;text-transform:uppercase;letter-spacing:.04em}
+  .job h3{font-size:1.2rem;margin:4px 0 2px}
+  .job .where{color:var(--muted);font-size:.95rem;margin-bottom:8px}
+  .job ul{padding-left:18px;color:var(--muted);font-size:.96rem}
+  .job li{margin:3px 0}
+  .edu{margin-top:12px}
+  .edu .card{padding:20px}
+  .edu .card h3{font-size:1.05rem;margin-bottom:4px}
+  .edu .card p{color:var(--muted);font-size:.92rem}
+
+  /* Réalisations */
+  .proj .label{display:inline-block;font-size:.8rem;font-weight:600;color:var(--warm);text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px}
+  .proj p{color:var(--muted);font-size:.96rem;margin-bottom:12px}
+  .chips{display:flex;flex-wrap:wrap;gap:6px}
+  .chip{font-size:.8rem;background:var(--bg);border:1px solid var(--line);padding:3px 10px;border-radius:999px;color:var(--muted)}
+
+  /* Outils */
+  .tools{display:flex;flex-wrap:wrap;gap:10px}
+  .tools .chip{font-size:.92rem;padding:7px 14px;background:var(--card)}
+
+  /* Freelance */
+  .freelance{background:var(--accent-soft);border-radius:var(--radius);padding:32px;display:grid;grid-template-columns:1.3fr 1fr;gap:28px;align-items:center}
+  .freelance h2{font-size:1.5rem}
+  .freelance p{color:var(--muted)}
+  .freelance ul{list-style:none}
+  .freelance li{padding:4px 0;font-size:.96rem}
+  @media(max-width:760px){.freelance{grid-template-columns:1fr}}
+
+  /* Contact */
+  .contact{text-align:center}
+  .contact .intro{margin:0 auto 28px}
+  .contact .actions{justify-content:center}
+  footer{text-align:center;color:var(--muted);font-size:.85rem;padding:28px 0 40px}
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="wrap">
+    <a href="#" class="logo">Manon Gondard</a>
+    <ul class="links">
+      <li><a href="#competences">Compétences</a></li>
+      <li><a href="#parcours">Parcours</a></li>
+      <li><a href="#realisations">Réalisations</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#contact" class="btn btn-main" style="padding:9px 18px">Me contacter</a>
+  </nav>
+</header>
+
+<main class="wrap">
+
+  <!-- ACCUEIL -->
+  <div class="hero">
+    <div>
+      <h1>Manon Gondard</h1>
+      <p class="role">Relation client · Support · Communication digitale</p>
+      <p class="pitch">
+        Organisée, fiable et à l'aise avec les outils numériques, j'accompagne clients et utilisateurs
+        au quotidien : réponses aux demandes, suivi des dossiers, gestion d'outils en ligne et création de contenus.
+        Je recherche un poste stable dans lequel m'investir sur la durée.
+      </p>
+      <div class="tags">
+        <span class="tag dispo">Disponible à partir de janvier 2027</span>
+        <span class="tag">📍 Lyon & alentours</span>
+        <span class="tag">Télétravail, hybride ou sur site</span>
+      </div>
+      <div class="actions">
+        <a href="#contact" class="btn btn-main">Me contacter</a>
+        <a href="cv-manon-gondard.pdf" class="btn btn-ghost" target="_blank">Télécharger mon CV</a>
+      </div>
+    </div>
+    <img src="photo-manon.jpg" alt="Portrait de Manon Gondard" class="photo">
+  </div>
+
+  <div class="stats">
+    <div class="stat"><b>5 ans</b><span>en agence marketing, au service de grands comptes</span></div>
+    <div class="stat"><b>230+</b><span>clientes accompagnées sur un programme en ligne et une application</span></div>
+    <div class="stat"><b>Centaines</b><span>de dossiers de participants traités chaque année</span></div>
+    <div class="stat"><b>1,4 M</b><span>de vues cumulées sur les réseaux sociaux gérés</span></div>
+  </div>
+
+  <!-- COMPÉTENCES -->
+  <section id="competences">
+    <h2>Ce que je fais bien</h2>
+    <p class="intro">Un profil polyvalent, entre relation client, gestion administrative et digital.</p>
+    <div class="grid3">
+      <div class="card">
+        <div class="icon">💬</div>
+        <h3>Relation client & support</h3>
+        <ul>
+          <li>Réponses écrites aux clients (e-mail, messagerie, back-office)</li>
+          <li>Aide à l'utilisation d'un outil ou d'une application</li>
+          <li>Suivi des demandes jusqu'à leur résolution</li>
+          <li>Recueil des retours clients</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="icon">🗂️</div>
+        <h3>Organisation & gestion</h3>
+        <ul>
+          <li>Devis, propositions commerciales et suivi de production</li>
+          <li>Traitement de dossiers en volume (vérification, relances)</li>
+          <li>Tableaux de suivi et reporting (Excel, Google Sheets)</li>
+          <li>Plannings, rendez-vous et coordination</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="icon">💻</div>
+        <h3>Digital & communication</h3>
+        <ul>
+          <li>Gestion des réseaux sociaux et de la communauté</li>
+          <li>Mise à jour de sites, d'applications et de back-offices</li>
+          <li>Mise en page de documents (PDF, présentations)</li>
+          <li>Montage vidéo simple et visuels</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARCOURS -->
+  <section id="parcours">
+    <h2>Parcours</h2>
+    <p class="intro">Cinq ans en agence, puis des missions en autonomie, à distance, pour des clients variés.</p>
+
+    <div class="timeline">
+      <div class="job">
+        <div class="when">Depuis janvier 2025</div>
+        <h3>Chargée de communication digitale & support applicatif</h3>
+        <div class="where">Indépendante — programmes de coaching sportif en ligne (Celiapolefit / Aérienne Club)</div>
+        <ul>
+          <li>Gestion quotidienne d'une application (≈ 135 clientes) : inscriptions, paramétrage, bugs, nouvelles fonctionnalités</li>
+          <li>Support des utilisatrices : accès, connexion, questions sur l'utilisation</li>
+          <li>Conception d'un programme PDF d'environ 100 pages (≈ 100 acheteuses)</li>
+          <li>Réseaux sociaux de 2 comptes : ≈ 270 vidéos, plus de 1,4 million de vues</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="when">Avril – septembre 2026</div>
+        <h3>Community manager</h3>
+        <div class="where">Indépendante — Domaine de Chanille, lieu de réception en Isère</div>
+        <ul>
+          <li>Planning éditorial, vidéos, visuels et stories (Instagram, Facebook)</li>
+          <li>Stratégie LinkedIn pour attirer les entreprises (séminaires)</li>
+          <li>Gestion de la fiche Google : informations, photos, réponses aux avis clients</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="when">Depuis 2024</div>
+        <h3>Missions ponctuelles en renfort</h3>
+        <div class="where">L'Agence Promo (adp), Lyon</div>
+        <ul>
+          <li>Gestion d'opérations de remboursement pour des marques (Cecil V33, Zodiac)</li>
+          <li>Traitement de plusieurs centaines de participations, contact avec les participants, bilan</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="when">Octobre 2019 – juillet 2024</div>
+        <h3>Assistante chef de projet marketing digital</h3>
+        <div class="where">L'Agence Promo (adp), Lyon</div>
+        <ul>
+          <li>Suivi client : compréhension des besoins, réponses, résolution de problèmes</li>
+          <li>Devis, propositions commerciales et suivi de fabrication</li>
+          <li>Mise à jour de sites et d'outils digitaux, animation des réseaux sociaux</li>
+          <li>Grands comptes : Zodiac Fluidra, Panzani, Cecil V33, Sodiaal</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="grid3 edu">
+      <div class="card">
+        <h3>Licence pro E-commerce & Marketing numérique</h3>
+        <p>IUT Jean Moulin Lyon 3 · 2019</p>
+      </div>
+      <div class="card">
+        <h3>DEUST Webmaster & métiers de l'Internet</h3>
+        <p>Université de Limoges · 2018</p>
+      </div>
+      <div class="card">
+        <h3>BTS Assistant de gestion PME-PMI</h3>
+        <p>Lycée Albert Thomas, Roanne · 2016</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- RÉALISATIONS -->
+  <section id="realisations">
+    <h2>Quelques réalisations</h2>
+    <p class="intro">Des projets concrets, menés en autonomie, du suivi client à la mise en ligne.</p>
+    <div class="grid2">
+      <div class="card proj">
+        <span class="label">Application & support</span>
+        <h3>Aérienne Club — application de coaching</h3>
+        <p>Création de l'application avec la cliente, puis gestion au quotidien : inscriptions des membres, support,
+          corrections de bugs, notifications et ajout de fonctionnalités à partir des retours des utilisatrices.</p>
+        <div class="chips"><span class="chip">GoodBarber</span><span class="chip">Support utilisateurs</span><span class="chip">≈ 135 clientes</span></div>
+      </div>
+      <div class="card proj">
+        <span class="label">Gestion de dossiers</span>
+        <h3>Opérations de remboursement pour des marques</h3>
+        <p>Mise en place du site de l'opération, vérification des participations, réponses aux participants
+          en cas de problème et bilan final pour le client.</p>
+        <div class="chips"><span class="chip">Back-office</span><span class="chip">Excel</span><span class="chip">Centaines de dossiers</span></div>
+      </div>
+      <div class="card proj">
+        <span class="label">Mise en page</span>
+        <h3>Stronger on the Pole — programme PDF</h3>
+        <p>Conception d'un programme d'environ 100 pages (entraînements, nutrition) avec vidéos intégrées,
+          puis animation du groupe des acheteuses.</p>
+        <div class="chips"><span class="chip">Canva</span><span class="chip">YouTube</span><span class="chip">≈ 100 acheteuses</span></div>
+      </div>
+      <div class="card proj">
+        <span class="label">Réseaux sociaux</span>
+        <h3>Domaine de Chanille & comptes coaching</h3>
+        <p>Plannings, tournages, montages et publications pour un lieu de réception et deux comptes de coaching :
+          plus de 1,4 million de vues cumulées.</p>
+        <div class="chips"><span class="chip">Instagram</span><span class="chip">LinkedIn</span><span class="chip">CapCut</span></div>
+      </div>
+    </div>
+
+    <h3 style="margin:44px 0 16px;font-size:1.2rem">Outils que j'utilise</h3>
+    <div class="tools">
+      <span class="chip">Pack Office / Excel</span><span class="chip">Google Workspace</span><span class="chip">Notion</span>
+      <span class="chip">Canva</span><span class="chip">CapCut</span><span class="chip">WordPress</span>
+      <span class="chip">GoodBarber</span><span class="chip">Meta Business Suite</span><span class="chip">Google Business Profile</span>
+      <span class="chip">Outils d'IA (Claude)</span>
+    </div>
+  </section>
+
+  <!-- FREELANCE -->
+  <section>
+    <div class="freelance">
+      <div>
+        <h2>En parallèle, en indépendante</h2>
+        <p>Je garde ma micro-entreprise pour quelques missions ponctuelles. Si vous avez un besoin précis, parlons-en.</p>
+      </div>
+      <ul>
+        <li>✔︎ Gestion de réseaux sociaux</li>
+        <li>✔︎ Création de visuels et de documents</li>
+        <li>✔︎ Mise à jour de site internet</li>
+        <li>✔︎ Renfort administratif ou support client</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact">
+    <h2>Me contacter</h2>
+    <p class="intro">Un poste à pourvoir ou une question ? Écrivez-moi, je réponds rapidement.</p>
+    <div class="actions">
+      <a href="mailto:gondardmanon@yahoo.fr" class="btn btn-main">gondardmanon@yahoo.fr</a>
+      <a href="cv-manon-gondard.pdf" class="btn btn-ghost" target="_blank">Télécharger mon CV</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>© 2026 Manon Gondard · Lyon</footer>
+
+</body>
+</html>
