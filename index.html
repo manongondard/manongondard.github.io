@@ -97,7 +97,10 @@
   .tools .chip{font-size:.92rem;padding:7px 14px;background:var(--card)}
 
   /* Freelance */
-  .freelance{background:var(--accent-soft);border-radius:var(--radius);padding:32px;display:grid;grid-template-columns:1.3fr 1fr;gap:28px;align-items:center}
+  .freelance{background:var(--accent-soft);border-radius:var(--radius);padding:36px;display:grid;grid-template-columns:1fr 1.6fr;gap:32px;align-items:center}
+  .services{columns:2;column-gap:28px}
+  .services li{break-inside:avoid}
+  @media(max-width:760px){.services{columns:1}}
   .freelance h2{font-size:1.5rem}
   .freelance p{color:var(--muted)}
   .freelance ul{list-style:none}
@@ -314,13 +317,20 @@
     <div class="freelance">
       <div>
         <h2>En parallèle, en indépendante</h2>
-        <p>Je garde ma micro-entreprise pour quelques missions ponctuelles. Si vous avez un besoin précis, parlons-en.</p>
+        <p>Je garde ma micro-entreprise pour des missions ponctuelles, auprès de commerces, d'indépendants et de petites entreprises. Si vous avez un besoin précis, parlons-en.</p>
+        <a href="#contact" class="btn btn-main" style="margin-top:18px">Parler de votre projet</a>
       </div>
-      <ul>
-        <li>✔︎ Gestion de réseaux sociaux</li>
-        <li>✔︎ Création de visuels et de documents</li>
-        <li>✔︎ Mise à jour de site internet</li>
-        <li>✔︎ Renfort administratif ou support client</li>
+      <ul class="services">
+        <li>✔︎ Création et refonte de sites internet (WordPress)</li>
+        <li>✔︎ Gestion des réseaux sociaux et de la communauté</li>
+        <li>✔︎ Création de contenu : vidéos, visuels, carrousels, stories</li>
+        <li>✔︎ Tournage et montage vidéo (CapCut)</li>
+        <li>✔︎ Rédaction : textes de site, légendes, newsletters</li>
+        <li>✔︎ Stratégie et planning éditorial</li>
+        <li>✔︎ Création de supports : PDF, programmes, flyers, templates Canva</li>
+        <li>✔︎ Fiche Google : mise à jour, photos, réponses aux avis</li>
+        <li>✔︎ Gestion d'application et support utilisateurs</li>
+        <li>✔︎ Renfort administratif et service client</li>
       </ul>
     </div>
   </section>
