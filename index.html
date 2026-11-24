@@ -89,6 +89,10 @@
   /* Réalisations */
   .proj-img{display:block;width:calc(100% + 52px);margin:-26px -26px 20px;border-radius:var(--radius) var(--radius) 0 0;border-bottom:1px solid var(--line)}
   .proj.wide{grid-column:1/-1}
+  .proj-link{display:block;transition:opacity .2s}
+  .proj-link:hover{opacity:.88}
+  .see-site{display:inline-block;margin-top:14px;color:var(--accent);font-weight:600;font-size:.95rem;text-decoration:none}
+  .see-site:hover{text-decoration:underline}
   .proj .label{display:inline-block;font-size:.8rem;font-weight:600;color:var(--warm);text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px}
   .proj p{color:var(--muted);font-size:.96rem;margin-bottom:12px}
   .chips{display:flex;flex-wrap:wrap;gap:6px}
@@ -306,12 +310,13 @@
         <div class="chips"><span class="chip">Back-office</span><span class="chip">Excel</span><span class="chip">Centaines de dossiers</span></div>
       </div>
       <div class="card proj wide">
-        <img src="real-site-celia.jpg" alt="Site de Célia Ponsero, éducatrice canine : avant et après la refonte" class="proj-img" loading="lazy">
+        <a href="https://celiaponsero.fr" target="_blank" rel="noopener" class="proj-link" title="Voir le nouveau site"><img src="real-site-celia.jpg" alt="Site de Célia Ponsero, éducatrice canine : avant et après la refonte" class="proj-img" loading="lazy"></a>
         <span class="label">Création de site internet</span>
         <h3>Refonte du site d'une éducatrice canine à Grenoble</h3>
         <p>Refonte complète d'un site WordPress, menée en autonomie : nouveau design, réécriture des textes,
           référencement (SEO), version mobile et développement sur mesure. Mise en ligne en cours.</p>
         <div class="chips"><span class="chip">WordPress</span><span class="chip">SEO</span><span class="chip">Rédaction</span><span class="chip">Mobile</span></div>
+        <a href="https://celiaponsero.fr" target="_blank" rel="noopener" class="see-site">Voir le nouveau site →</a>
       </div>
     </div>
 
